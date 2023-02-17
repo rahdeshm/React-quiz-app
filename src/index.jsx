@@ -1,3 +1,5 @@
+// require('file-loader?name=[name].[ext]!./index.html');
+// require
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';

@@ -1,0 +1,32 @@
+
+.model-container{
+    height: 400px;
+    width: 500px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h2{
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    P{
+        font-family: sans-serif;
+        font-weight: 400;
+        margin-bottom: 20px;
+
+    }
+
+    .close-btn{
+        display: block;
+        margin: auto;
+        padding: 8px;
+        background-color: yellow;
+        border: none;
+        border-radius: 10px;
+        width: 50%;
+    }
+}
