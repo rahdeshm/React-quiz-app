@@ -45,7 +45,6 @@ function App() {
             <button className='next-question' onClick={nextQuestions}>Next question</button>
         </section>
       </main> */}
-
       <Modal/>
     </div>
   );
