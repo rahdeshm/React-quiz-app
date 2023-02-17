@@ -1,13 +1,16 @@
-import React from "react";
-import './Modal.scss'
+import React, { useContext } from "react";
+import { AppContext } from "../Context/Contex";
+import './Modal.scss';
+
 
 const Modal=()=>{
 
+    const{modal,closeModal,correct,questions}=useContext(AppContext)
     return(
-        <div className="model-container isOpen">
+        <div className={`${modal? 'modal-container isOpen' :'modal-container'}`}>
             <div className="Model-content">
                 <h2>Congrats</h2>
-                <p>You answered n questions correctly</p>
+                <p>You answered {((correct/questions.length)*100)}</p>
                 <button className="close-btn">Play again</button>
             </div>
         </div>

@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../Context/Contex";
 import './SetupForm.scss'
 const SetupForm=()=>{
-
+    const{handleSubmit,handleChange,print}= useContext(AppContext);
+    // console.log(handleChange,handleSubmit);
     return(
       <main>
          <section className="quiz quiz-small">
-            <form className="setup-form">
+            <form className="setup-form" onSubmit={print} >
                 <h1>Setup Quiz</h1>
                 <div className="form-control">
                     <label htmlFor="amount">Number of questions</label>
@@ -31,7 +33,7 @@ const SetupForm=()=>{
                 </div>
                 
                 <p className="error">Can't generate questions, please try again</p>
-                <button type="submit" className="submit-btn">Start</button>
+                <button type="submit" onClick={handleChange} className="submit-btn">Start</button>
 
             </form>
          </section>
