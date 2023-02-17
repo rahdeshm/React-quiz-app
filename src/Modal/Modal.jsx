@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import  ReactDOM  from "react-dom";
 import { AppContext } from "../Context/Contex";
 import './Modal.scss';
 
@@ -6,7 +7,7 @@ import './Modal.scss';
 const Modal=()=>{
     console.log('modal');
     const{modal,closeModal,correct,questions}=useContext(AppContext)
-    return( 
+    return ReactDOM.createPortal( 
         <>
        <h2>hhjkhjn</h2>
        <div className={`${modal? 'modal-container isOpen' :'modal-container'}`}>
@@ -17,7 +18,7 @@ const Modal=()=>{
             </div>
 
         </div>
-        </>
+        </>,document.getElementById("modal")
     )
 }
 

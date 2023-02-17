@@ -38,7 +38,7 @@ const AppProvider=({children})=>{
             setError(false);
         }
         else{
-            setWaiting(true)
+            setWaiting(false)
             setLoading(true)
         }
     }
@@ -47,7 +47,11 @@ const AppProvider=({children})=>{
    const handleSubmit=(e)=>{
     console.log('handlesubmit');
      e.preventDefault();
-     const{amount,difficulty,category}=quiz;
+     let{amount,difficulty,category}=quiz;
+     console.log(difficulty);
+     if(difficulty==='ease'){
+        difficulty='easy'
+     };
      const url=`https://opentdb.com/api.php?amount=${amount}&difficulty=${difficulty}&category=${table[category]}`;
      console.log(url);
      fetchData(url)
@@ -62,11 +66,12 @@ const AppProvider=({children})=>{
         setCorrect(0)
     }
     const nextQuestion=()=>{
-        console.log('object');
+        console.log('object',index,questions.length);
         setIndex((oldIndex)=>{
             const index1=oldIndex+1;
             if(index1>questions.length-1){
                 openModal();
+                // setCorrect(0);
                 return 0
             }
             else{

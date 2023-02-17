@@ -1,10 +1,10 @@
 import React from "react"
 
 const LoadingScreen=()=>{
-
+console.log('loading');
     return(
         <main>
-            <div className="loading"></div>
+            <div className="loading">loading...</div>
         </main>
     )
 }
