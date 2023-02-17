@@ -6,7 +6,7 @@ import Modal from './Modal/Modal';
 import { AppContext } from './Context/Contex';
 import LoadingScreen from './Loading/LoadingScreen';
 function App() {
- const {waiting,loading,questions,index,correct,nextQuestions,checkAnswer}= useContext(AppContext);
+ const {waiting,loading,questions,index,correct,nextQuestion,checkAnswers}= useContext(AppContext);
 
  if(waiting){
   return <SetupForm/>
@@ -15,7 +15,7 @@ function App() {
   return <LoadingScreen/>
  }
 
- const {incorrect_answers,correct_answer,question}=questions[index];
+ const {correct_answer,question,incorrect_answers}=questions[index];
  let answers=[...incorrect_answers];
  const tempIndex=Math.floor(Math.random()*4);
 
@@ -29,23 +29,22 @@ function App() {
 
   return (
     <div className="App">
-      {/* <main>
+      <main>
         <section className='mainquiz'>
-            <p className='correctanswers'>Correct answers: {correct_answer}/{index}</p>
+            <p className='correctanswers'>Correct answers: {correct}/{index}</p>
             <article className='container'>
               <h2>{question}</h2>
               <div>
                 {
                   answers.map((answer,index)=>{
-                     return <button key={index} className='answer-btn' onClick={()=>checkAnswer(correct_answer===answer)}>{answer}</button>
+                     return <button key={index} className='answer-btn' onClick={()=>checkAnswers(correct_answer===answer)}>{answer}</button>
                   })
                 }
               </div>
             </article>
-            <button className='next-question' onClick={nextQuestions}>Next question</button>
+            <button className='next-question' onClick={nextQuestion}>Next question</button>
         </section>
-      </main> */}
-      <Modal/>
+      </main>
     </div>
   );
 }

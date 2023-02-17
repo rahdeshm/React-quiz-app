@@ -7,6 +7,8 @@ const Modal=()=>{
     console.log('modal');
     const{modal,closeModal,correct,questions}=useContext(AppContext)
     return( 
+        <>
+       <h2>hhjkhjn</h2>
        <div className={`${modal? 'modal-container isOpen' :'modal-container'}`}>
             <div className="Model-content">
                 <h2>Congrats</h2>
@@ -15,6 +17,7 @@ const Modal=()=>{
             </div>
 
         </div>
+        </>
     )
 }
 
