@@ -29,6 +29,7 @@ function App() {
 
   return (
     <div className="App">
+      <h2>djscj</h2>
       {/* <main>
         <section className='mainquiz'>
             <p className='correctanswers'>Correct answers: {correct}/{index}</p>

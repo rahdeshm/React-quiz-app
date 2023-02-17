@@ -7,18 +7,21 @@ import './Modal.scss';
 const Modal=()=>{
     console.log('modal');
     const{modal,closeModal,correct,questions}=useContext(AppContext)
-    return ReactDOM.createPortal( 
-        <>
-       <h2>hhjkhjn</h2>
-       <div className={`${modal? 'modal-container isOpen' :'modal-container'}`}>
-            <div className="Model-content">
-                <h2>Congrats</h2>
-                <p>You answered {((correct/questions.length)*100)}</p>
-                <button className="close-btn">Play again</button>
-            </div>
+    // return ReactDOM.createPortal( 
+    //     <>
+    //    <h2>hhjkhjn</h2>
+    //    <div className={`${modal? 'modal-container isOpen' :'modal-container'}`}>
+    //         <div className="Model-content">
+    //             <h2>Congrats</h2>
+    //             <p>You answered {((correct/questions.length)*100)}</p>
+    //             <button className="close-btn">Play again</button>
+    //         </div>
 
-        </div>
-        </>,document.getElementById("modal")
+    //     </div>
+    //     </>,document.getElementById("modal")
+    // )
+    return(
+        <h2>hjfd</h2>
     )
 }
 
