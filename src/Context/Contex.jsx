@@ -58,6 +58,7 @@ const AppProvider=({children})=>{
    }
    
     const openModal=()=>{
+        console.log('open modal');
         setModal(true)
     }
     const closeModal=()=>{
@@ -69,7 +70,7 @@ const AppProvider=({children})=>{
         console.log('object',index,questions.length);
         setIndex((oldIndex)=>{
             const index1=oldIndex+1;
-            if(index1>questions.length-1){
+            if(index1>=questions.length){
                 openModal();
                 // setCorrect(0);
                 return 0

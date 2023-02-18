@@ -6,31 +6,30 @@ import Modal from './Modal/Modal';
 import { AppContext } from './Context/Contex';
 import LoadingScreen from './Loading/LoadingScreen';
 function App() {
- const {waiting,loading,questions,index,correct,nextQuestion,checkAnswers}= useContext(AppContext);
+ const {waiting,loading,questions,index,correct,nextQuestion,checkAnswers,modal}= useContext(AppContext);
 
-//  if(waiting){
-//   return <SetupForm/>
-//  }
-//  if(loading){
-//   return <LoadingScreen/>
-//  }
+ if(waiting){
+  return <SetupForm/>
+ }
+ if(loading){
+  return <LoadingScreen/>
+ }
 
-//  const {correct_answer,question,incorrect_answers}=questions[index];
-//  let answers=[...incorrect_answers];
-//  const tempIndex=Math.floor(Math.random()*4);
+ const {correct_answer,question,incorrect_answers}=questions[index];
+ let answers=[...incorrect_answers];
+ const tempIndex=Math.floor(Math.random()*4);
 
-//  if(tempIndex===3){
-//   answers.push(correct_answer)
-//  }
-//  else{
-//   answers.push(answers[tempIndex]);
-//   answers[tempIndex]=correct_answer
-//  }
+ if(tempIndex===3){
+  answers.push(correct_answer)
+ }
+ else{
+  answers.push(answers[tempIndex]);
+  answers[tempIndex]=correct_answer
+ }
 
   return (
     <div className="App">
-      <h2>djscj</h2>
-      {/* <main>
+      <main>
         <section className='mainquiz'>
             <p className='correctanswers'>Correct answers: {correct}/{index}</p>
             <article className='container'>
@@ -45,8 +44,8 @@ function App() {
             </article>
             <button className='next-question' onClick={nextQuestion}>Next question</button>
         </section>
-      </main> */}
-      <Modal/>
+      </main>
+      {modal?<Modal/>:null}
     </div>
   );
 }
